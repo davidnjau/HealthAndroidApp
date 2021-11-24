@@ -42,24 +42,27 @@ data class RegisterRequest(
     val emailAddress:String,
     val confirmPassword:String,
 )
+
+
 data class PatientRegistrationData(
+    val id:String?,
     val patientId:String,
-    val registrationDate:Date,
+    val registrationDate:String,
     val firstName:String,
     val lastName:String,
-    val dateOfBirth:Date,
+    val dateOfBirth:String,
     val gender:String
 )
 data class PatientsVitalsData(
     val patientUUID:String,
-    val visitDate:Date,
+    val visitDate:String,
     val weightInKgs:Double,
     val heightInCm:Double,
     val bmiValue: Double?
 )
 data class PatientsFormData(
     val patientUUID:String,
-    val visitDate:Date,
+    val visitDate:String,
     val generalHealth:String,
 
     val weightDiet:String?,

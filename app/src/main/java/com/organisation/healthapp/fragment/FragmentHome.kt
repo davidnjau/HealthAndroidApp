@@ -16,8 +16,12 @@ import com.organisation.healthapp.R
 import com.organisation.healthapp.helperclass.Formatter
 import com.organisation.healthapp.patient.PatientsListing
 import com.organisation.healthapp.replaceFragmenty
+import com.organisation.healthapp.retrofit.RetrofitCallsAuthentication
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.set
@@ -26,12 +30,19 @@ import kotlin.collections.set
 class FragmentHome : Fragment() {
 
     private lateinit var formatter : Formatter
+    private var retrofitCallsAuthentication: RetrofitCallsAuthentication = RetrofitCallsAuthentication()
+
+    private lateinit var tvPatientReg:TextView
+    private lateinit var tvPatientReg1:TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
+
+        tvPatientReg = rootView.findViewById(R.id.tvPatientReg)
+        tvPatientReg1 = rootView.findViewById(R.id.tvPatientReg1)
 
         formatter = Formatter()
 
@@ -67,6 +78,21 @@ class FragmentHome : Fragment() {
         }
 
         setGreeting()
+
+        getNumbers()
+
+    }
+
+    private fun getNumbers() {
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val patientListingList = retrofitCallsAuthentication.getPatientList(requireActivity(),"")
+            CoroutineScope(Dispatchers.Main).launch {
+                val size = patientListingList.size
+                tvPatientReg.text = size.toString()
+                tvPatientReg1.text = size.toString()
+            }
+        }
 
     }
 

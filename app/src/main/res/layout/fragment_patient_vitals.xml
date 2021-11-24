@@ -13,118 +13,126 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="Patient Number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
 
                 <EditText
+                    android:id="@+id/etPatientNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_outline"
+                    android:enabled="false"
                     android:hint="Patient number"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/primary" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="Visit Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
 
-                <EditText
-                    android:hint="Visit Date"
+                <TextView
+                    android:id="@+id/tvRegistrationDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:text="Pick a Date"
+                    app:drawableEndCompat="@drawable/ic_action_date" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textColor="@color/black"
-                    android:text="Weight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="Weight in Kgs"
+                    android:textColor="@color/black" />
 
                 <EditText
-                    android:hint="Weight in Kgs"
+                    android:id="@+id/etWeight"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:hint="Weight in Kgs" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textColor="@color/black"
-                    android:text="Height"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="Height in CM"
+                    android:textColor="@color/black" />
 
                 <EditText
-                    android:hint="Height in CM"
+                    android:id="@+id/etHeight"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:hint="Height in CM" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="BMI"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
 
                 <TextView
+                    android:id="@+id/tvBMIValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
-                    android:textColor="@color/black"
-                    android:text="12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
+                    android:text="0"
+                    android:textColor="@color/primary" />
 
 
             </LinearLayout>
-
 
 
         </LinearLayout>
@@ -158,12 +166,13 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:textColor="@color/white"
-                    android:background="@drawable/button_outline_solid"
-                    android:textAllCaps="false"
-                    android:text="Save"
+                    android:id="@+id/btnSave"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_outline_solid"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 

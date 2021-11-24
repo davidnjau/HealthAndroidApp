@@ -29,24 +29,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <TextView
                     android:layout_weight="1"
-                    android:drawableStart="@drawable/ic_action_search"
-                    android:hint="Search"
-                    android:background="@drawable/edit_clear_outline"
+                    android:id="@+id/tvRegistrationDate"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_outline"
+                    android:text="Search"
+                    app:drawableStartCompat="@drawable/ic_action_search" />
 
                 <RelativeLayout
+                    android:gravity="center"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/edit_clear_outline"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
-                    <ImageButton
-                        android:background="@drawable/ic_action_filter"
+                    <Button
+                        android:id="@+id/relSearchList"
+                        android:textAllCaps="false"
+                        android:text="Search"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+
 
                 </RelativeLayout>
 
@@ -56,10 +60,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_margin="10dp"
-                android:id="@+id/recyclerViewOrders"
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 tools:listitem="@layout/patient_listing"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
 

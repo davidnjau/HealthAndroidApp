@@ -11,10 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.organisation.healthapp.auth.Profile
-import com.organisation.healthapp.fragment.FragmentHome
-import com.organisation.healthapp.fragment.FragmentPatientListing
-import com.organisation.healthapp.fragment.FragmentPatientRegistration
-import com.organisation.healthapp.fragment.FragmentPatientVitals
+import com.organisation.healthapp.fragment.*
 import com.organisation.healthapp.helperclass.Formatter
 import com.organisation.healthapp.patient.PatientsListing
 import kotlinx.android.synthetic.main.activity_main.*
@@ -89,11 +86,49 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     override fun onStart() {
         super.onStart()
 
-        replaceFragmenty(
-            fragment = FragmentHome(),
-            allowStateLoss = true,
-            containerViewId = R.id.mainContent
-        )
+        val extras = intent.extras
+        if (extras != null) {
+            when (extras.getString("details")) {
+                "vitals" -> {
+
+                    replaceFragmenty(
+                        fragment = FragmentPatientVitals(),
+                        allowStateLoss = true,
+                        containerViewId = R.id.mainContent
+                    )
+
+                }
+                "formA" -> {
+                    replaceFragmenty(
+                        fragment = FragmentPatientFormA(),
+                        allowStateLoss = true,
+                        containerViewId = R.id.mainContent
+                    )
+                }
+                "formB" -> {
+                    replaceFragmenty(
+                        fragment = FragmentPatientFormB(),
+                        allowStateLoss = true,
+                        containerViewId = R.id.mainContent
+                    )
+                }
+                else -> {
+                    replaceFragmenty(
+                        fragment = FragmentHome(),
+                        allowStateLoss = true,
+                        containerViewId = R.id.mainContent
+                    )
+                }
+            }
+
+        }else{
+            replaceFragmenty(
+                fragment = FragmentHome(),
+                allowStateLoss = true,
+                containerViewId = R.id.mainContent
+            )
+        }
+
 
 
     }

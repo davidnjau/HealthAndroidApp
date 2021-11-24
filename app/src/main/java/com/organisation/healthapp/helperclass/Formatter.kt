@@ -68,9 +68,58 @@ class Formatter {
 
     }
 
-    fun changeDateFormat(date: String): Date {
 
+    fun changeDateTimeFormat(dateStr: String): String {
+
+        val originalFormat = SimpleDateFormat("dd-MM-yyyy")
+        val targetFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val date = originalFormat.parse(dateStr)
+        return targetFormat.format(date)
+    }
+
+    fun changeDateFormat(date: String): Date {
         val format = SimpleDateFormat("dd-MM-yyyy")
         return format.parse(date)
     }
+    fun getHeaders(context: Context):HashMap<String, String>{
+
+        val stringStringMap = HashMap<String, String>()
+
+        val successLogin = getUserDetails(context)
+        val accessToken = successLogin?.accessToken.toString()
+        stringStringMap["Authorization"] = " Bearer $accessToken"
+
+        return stringStringMap
+
+    }
+
+    fun getPatientDetails(context: Context):Triple<String?, String?, String?>{
+
+        val preferences = context.getSharedPreferences(
+            context.resources.getString(R.string.app_name),
+            Context.MODE_PRIVATE
+        )
+        val patientId = preferences.getString("patientId", null)
+        val patientFullNames = preferences.getString("patientFullNames", null)
+        val patientNumber = preferences.getString("patientNumber", null)
+
+        return if (patientFullNames != null && patientId != null){
+            Triple(patientId, patientFullNames,patientNumber)
+        }else{
+            Triple(null, null, null)
+        }
+
+    }
+
+    fun calculateBMI(weightKgs: Double, heightCm: Double): Double {
+
+//        BMI = Weight(kg)/ Height(M)2 )
+
+        val heightM = heightCm / 100
+        val heightSquare = heightM * heightM
+
+        return weightKgs / heightSquare
+
+    }
+
 }

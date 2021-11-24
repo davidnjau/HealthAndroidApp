@@ -30,6 +30,9 @@
                     android:layout_height="wrap_content"/>
 
                 <EditText
+                    android:textColor="@color/primary"
+                    android:id="@+id/etPatientNumber"
+                    android:enabled="false"
                     android:hint="Patient number"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
@@ -50,12 +53,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <EditText
-                    android:hint="Visit Date"
+                <TextView
+                    android:id="@+id/tvRegistrationDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:text="Pick a Date"
+                    app:drawableEndCompat="@drawable/ic_action_date" />
 
             </LinearLayout>
 
@@ -67,22 +72,25 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="Visit Date"
+                    android:text="General Health"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <RadioGroup
+                    android:id="@+id/radioGrpGeneralHealth"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
+                        android:id="@+id/radioGood"
                         android:layout_weight="1"
                         android:text="Good"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <RadioButton
+                        android:id="@+id/radioPoor"
                         android:layout_weight="1"
                         android:text="Poor"
                         android:layout_width="wrap_content"
@@ -106,17 +114,20 @@
                     android:layout_height="wrap_content"/>
 
                 <RadioGroup
+                    android:id="@+id/radioGrpWeight"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
+                        android:id="@+id/radioYes"
                         android:layout_weight="1"
                         android:text="Yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <RadioButton
+                        android:id="@+id/radioNo"
                         android:layout_weight="1"
                         android:text="No"
                         android:layout_width="wrap_content"
@@ -140,6 +151,7 @@
                     android:layout_height="wrap_content"/>
 
                 <EditText
+                    android:id="@+id/etComments"
                     android:paddingBottom="60dp"
                     android:hint="Comments"
                     android:layout_marginTop="10dp"
@@ -182,12 +194,13 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:textColor="@color/white"
-                    android:background="@drawable/button_outline_solid"
-                    android:textAllCaps="false"
-                    android:text="Save"
+                    android:id="@+id/btnSave"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_outline_solid"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 

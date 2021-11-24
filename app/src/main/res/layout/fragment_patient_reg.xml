@@ -30,6 +30,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
+                    android:inputType="textPersonName"
                     android:id="@+id/etPatientNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -75,6 +76,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
+                    android:inputType="textPersonName"
                     android:id="@+id/etFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -97,6 +99,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
+                    android:inputType="textPersonName"
                     android:id="@+id/etLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

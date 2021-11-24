@@ -29,7 +29,10 @@ import kotlinx.android.synthetic.main.fragment_patient_reg.*
 import java.lang.StringBuilder
 import android.widget.ArrayAdapter
 import com.organisation.healthapp.helperclass.CustomDialogToast
+import com.organisation.healthapp.helperclass.PatientRegistrationData
+import com.organisation.healthapp.retrofit.RetrofitCallsAuthentication
 import kotlinx.android.synthetic.main.fragment_patient_reg.view.*
+import java.text.SimpleDateFormat
 
 class FragmentPatientRegistration : Fragment() , AdapterView.OnItemSelectedListener {
 
@@ -47,8 +50,14 @@ class FragmentPatientRegistration : Fragment() , AdapterView.OnItemSelectedListe
     private var dateRegistration : Date? = null
     private var dateOfBirth : Date? = null
 
+    private var dateRegistration1 : String = ""
+    private var dateOfBirth1 : String = ""
+
     private var selectedGender: String? = null
     var customDialogToast = CustomDialogToast()
+    private var retrofitCallsAuthentication: RetrofitCallsAuthentication = RetrofitCallsAuthentication()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -59,6 +68,8 @@ class FragmentPatientRegistration : Fragment() , AdapterView.OnItemSelectedListe
         spinner = rootView.findViewById(R.id.spinner)
         tvDOB = rootView.findViewById(R.id.tvDOB)
         tvRegistrationDate = rootView.findViewById(R.id.tvRegistrationDate)
+
+
 
         tvDOB.setOnClickListener { showDatePicker("dob") }
         tvRegistrationDate.setOnClickListener { showDatePicker("regDate") }
@@ -92,7 +103,9 @@ class FragmentPatientRegistration : Fragment() , AdapterView.OnItemSelectedListe
                 && selectedGender != null
             ){
 
-
+                val registerPatientRegistration = PatientRegistrationData(null, etPatientNumber,
+                    dateRegistration1, etFirstName, etLastName, dateOfBirth1, selectedGender!!)
+                retrofitCallsAuthentication.addPatient(requireActivity(), registerPatientRegistration)
 
             }else{
                 customDialogToast.CustomDialogToast(
@@ -102,6 +115,8 @@ class FragmentPatientRegistration : Fragment() , AdapterView.OnItemSelectedListe
             }
 
         }
+
+
 
         return rootView
     }
@@ -119,14 +134,18 @@ class FragmentPatientRegistration : Fragment() , AdapterView.OnItemSelectedListe
 
                 val selectedDate = dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
                 val date = formatter.changeDateFormat(selectedDate)
+                val dateStr = formatter.changeDateTimeFormat(selectedDate)
+
 
                 if (value == "dob"){
                     tvDOB.text = selectedDate
                     dateOfBirth = date
+                    dateOfBirth1 = dateStr
                 }
                 if(value == "regDate"){
                     tvRegistrationDate.text = selectedDate
                     dateRegistration = date
+                    dateRegistration1 = dateStr
                 }
             },
             mYear,
