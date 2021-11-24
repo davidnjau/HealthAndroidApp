@@ -10,27 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthApp">
         <activity
-            android:name=".PatientsListing"
+            android:name=".auth.Profile"
             android:exported="true" />
         <activity
-            android:name=".PatientsForm"
+            android:name=".patient.PatientsListing"
             android:exported="true" />
         <activity
-            android:name=".PatientsVitals"
+            android:name=".patient.PatientsForm"
             android:exported="true" />
         <activity
-            android:name=".PatientRegistration"
+            android:name=".patient.PatientsVitals"
             android:exported="true" />
         <activity
-            android:name=".Register"
+            android:name=".patient.PatientRegistration"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".auth.Register"
+            android:exported="true" />
+        <activity
+            android:name=".auth.Login"
             android:exported="true" />
         <activity
             android:name=".Splash"
             android:exported="true" />
         <activity
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

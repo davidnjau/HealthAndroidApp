@@ -1,11 +1,12 @@
-package com.organisation.healthapp
+package com.organisation.healthapp.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.organisation.healthapp.R
 
-class PatientsForm : AppCompatActivity() {
+class Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_patients_form)
+        setContentView(R.layout.activity_register)
     }
 }

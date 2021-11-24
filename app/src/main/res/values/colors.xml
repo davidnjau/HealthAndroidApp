@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="primary">#FF1161</color>
+
+
     <color name="grey_bac">#704E4B4B</color>
     <color name="transparent">#79FFFFFF</color>
     <color name="transparent1">#144E4B4B</color>

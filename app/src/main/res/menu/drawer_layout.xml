@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+
+        <item
+            android:checked="true"
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/ic_action_home"
+            android:title="Home" />
+
+    </group>
+
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navigation_profile"
+            android:icon="@drawable/ic_action_profile"
+            android:title="My Account" />
+    </group>
+
+
+    <group
+        android:id="@+id/grp3"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navigation_registration"
+            android:icon="@drawable/ic_action_reg"
+            android:title="Patient Registration" />
+    </group>
+
+    <group
+        android:id="@+id/grp5"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navigation_vitals"
+            android:icon="@drawable/ic_action_vitals"
+            android:title="Vitals Form" />
+
+    </group>
+
+
+    <group
+        android:id="@+id/grp6"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/navigation_listing"
+            android:icon="@drawable/ic_action_listing"
+            android:title="Patient Listing" />
+
+    </group>
+
+
+
+</menu>

@@ -1,7 +1,8 @@
-package com.organisation.healthapp
+package com.organisation.healthapp.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.organisation.healthapp.R
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
