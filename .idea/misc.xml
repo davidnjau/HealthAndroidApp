@@ -6,21 +6,27 @@
         <entry key="app/src/main/res/drawable/bac_outline.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/bac_outline_trans.xml" value="0.1638888888888889" />
         <entry key="app/src/main/res/drawable/bac_outline_trans_deep.xml" value="0.36615384615384616" />
+        <entry key="app/src/main/res/drawable/button_background2.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/button_outline.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/button_outline_solid.xml" value="0.36615384615384616" />
+        <entry key="app/src/main/res/drawable/edit_clear.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/edit_clear_outline.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/edit_outline.xml" value="0.36615384615384616" />
+        <entry key="app/src/main/res/drawable/edit_outline1.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/nav_view_item_text.xml" value="0.36615384615384616" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_patient_registration.xml" value="0.16018518518518518" />
         <entry key="app/src/main/res/layout/activity_patients_form.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_patients_listing.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_patients_vitals.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.17299898682877407" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.17299898682877407" />
         <entry key="app/src/main/res/layout/custom_bottom_navigation.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_patient_form_a.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_patient_form_b.xml" value="0.35572916666666665" />
