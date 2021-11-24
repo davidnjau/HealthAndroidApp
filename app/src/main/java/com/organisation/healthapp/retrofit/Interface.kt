@@ -10,10 +10,10 @@ import retrofit2.http.*
 
 interface Interface {
 
-    @POST("/auth/register/")
+    @POST("/api/v1/auth/registration")
     fun registerUser(@Body userRegister: RegisterRequest): Call<RegisterResponse>
 
-    @POST("/auth/login/")
+    @POST("/api/v1/auth/login")
     fun loginUser(@Body user: UserLogin): Call<SuccessLogin>
     
     

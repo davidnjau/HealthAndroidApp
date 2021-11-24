@@ -41,7 +41,7 @@ class Register : AppCompatActivity() {
                 if (passWord != confirmPasword){
 
                     val userRegister = RegisterRequest(
-                        passWord, fullNames, emailAddress, passWord)
+                        passWord, fullNames, emailAddress, confirmPasword)
 
                     retrofitCallsAuthentication.registerUser(this, userRegister)
 

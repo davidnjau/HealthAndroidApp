@@ -8,6 +8,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.organisation.healthapp.MainActivity
 import com.organisation.healthapp.R
 import com.organisation.healthapp.auth.Profile
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class Formatter {
 
@@ -43,4 +46,31 @@ class Formatter {
             false
         }
 
+    fun getUserDetails(context: Context):SuccessLogin?{
+
+        val preferences = context.getSharedPreferences(
+            context.resources.getString(R.string.app_name),
+            Context.MODE_PRIVATE
+        )
+        val accessToken = preferences.getString("accessToken", null)
+        val userId = preferences.getString("userId", null)
+        val fullNames = preferences.getString("fullNames", null)
+        val emailAddress = preferences.getString("emailAddress", null)
+
+        return if (accessToken != null && userId != null && fullNames != null && emailAddress != null) {
+            SuccessLogin(
+                accessToken, userId, fullNames, emailAddress, ArrayList()
+            )
+        }else{
+            null
+        }
+
+
+    }
+
+    fun changeDateFormat(date: String): Date {
+
+        val format = SimpleDateFormat("dd-MM-yyyy")
+        return format.parse(date)
+    }
 }

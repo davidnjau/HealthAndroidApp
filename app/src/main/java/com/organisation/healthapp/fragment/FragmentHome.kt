@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.organisation.healthapp.R
+import com.organisation.healthapp.helperclass.Formatter
 import com.organisation.healthapp.patient.PatientsListing
 import com.organisation.healthapp.replaceFragmenty
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -24,9 +25,7 @@ import kotlin.collections.set
 
 class FragmentHome : Fragment() {
 
-    private lateinit var tvPatientRegistration: TextView
-    private lateinit var tvVitalsForm: TextView
-    private lateinit var tvPatientListing: TextView
+    private lateinit var formatter : Formatter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -34,6 +33,7 @@ class FragmentHome : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
+        formatter = Formatter()
 
         rootView.tvPatientRegistration.setOnClickListener {
 
@@ -58,7 +58,46 @@ class FragmentHome : Fragment() {
         return rootView
     }
 
+    override fun onStart() {
+        super.onStart()
 
+        val successLogin = formatter.getUserDetails(requireActivity())
+        if (successLogin != null){
+            tvUserName.text = successLogin.fullNames
+        }
+
+        setGreeting()
+
+    }
+
+    private fun setGreeting() {
+
+        val date = Date()
+        val cal: Calendar = Calendar.getInstance()
+        cal.time = date
+        val hour: Int = cal.get(Calendar.HOUR_OF_DAY)
+
+        //Set greeting
+
+        //Set greeting
+        var greeting: String = ""
+        when (hour) {
+            in 6..11 -> {
+                greeting = "Good Morning,"
+            }
+            in 12..16 -> {
+                greeting = "Good Afternoon,"
+            }
+            in 17..19 -> {
+                greeting = "Good Evening,"
+            }
+            in 20..23 -> {
+                greeting = "Good Night,"
+            }
+        }
+        tvGreetings.text = greeting
+
+    }
 
 
 }

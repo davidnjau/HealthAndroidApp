@@ -15,19 +15,26 @@ import com.organisation.healthapp.fragment.FragmentHome
 import com.organisation.healthapp.fragment.FragmentPatientListing
 import com.organisation.healthapp.fragment.FragmentPatientRegistration
 import com.organisation.healthapp.fragment.FragmentPatientVitals
+import com.organisation.healthapp.helperclass.Formatter
 import com.organisation.healthapp.patient.PatientsListing
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.activity_profile.tvMainName
+import kotlinx.android.synthetic.main.activity_profile.tvViewProfile
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.nav_header_main.*
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener{
 
     private lateinit var drawer_layout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var formatter: Formatter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        formatter = Formatter()
 
         drawer_layout = findViewById(R.id.drawer_layout)
 
@@ -87,6 +94,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
             allowStateLoss = true,
             containerViewId = R.id.mainContent
         )
+
 
     }
 

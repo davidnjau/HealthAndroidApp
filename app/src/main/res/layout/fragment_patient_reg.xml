@@ -30,6 +30,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
+                    android:id="@+id/etPatientNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -50,12 +51,14 @@
                     android:text="Registration Date"
                     android:textColor="@color/black" />
 
-                <EditText
+                <TextView
+                    android:id="@+id/tvRegistrationDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
-                    android:hint="Registration Date" />
+                    android:text="Pick a Date"
+                    app:drawableEndCompat="@drawable/ic_action_date" />
 
             </LinearLayout>
 
@@ -72,6 +75,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
+                    android:id="@+id/etFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -93,6 +97,7 @@
                     android:textColor="@color/black" />
 
                 <EditText
+                    android:id="@+id/etLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -113,12 +118,14 @@
                     android:text="Date of Birth"
                     android:textColor="@color/black" />
 
-                <EditText
+                <TextView
+                    android:id="@+id/tvDOB"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
-                    android:hint="12/12/12" />
+                    android:text="Pick a Date"
+                    app:drawableEndCompat="@drawable/ic_action_date" />
 
             </LinearLayout>
 
@@ -141,7 +148,7 @@
                     android:background="@drawable/edit_outline">
 
                     <Spinner
-                        android:id="@+id/coursesspinner"
+                        android:id="@+id/spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintStart_toStartOf="parent"
@@ -184,12 +191,13 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:textColor="@color/white"
-                    android:background="@drawable/button_outline_solid"
-                    android:textAllCaps="false"
-                    android:text="Save"
+                    android:id="@+id/btnSave"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_outline_solid"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 

@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +15,40 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.set
 
+import android.app.DatePickerDialog
+import android.app.DatePickerDialog.OnDateSetListener
+import android.app.Dialog
+import android.content.Context
+import android.text.TextUtils
+import android.widget.*
 
-class FragmentPatientRegistration : Fragment() {
+import com.organisation.healthapp.helperclass.Formatter
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.fragment_patient_reg.*
 
+import java.lang.StringBuilder
+import android.widget.ArrayAdapter
+import com.organisation.healthapp.helperclass.CustomDialogToast
+import kotlinx.android.synthetic.main.fragment_patient_reg.view.*
+
+class FragmentPatientRegistration : Fragment() , AdapterView.OnItemSelectedListener {
+
+    private var mYear = 0
+    private  var mMonth:Int = 0
+    private  var mDay:Int = 0
+    private  var mHour:Int = 0
+    private  var mMinute:Int = 0
+
+    private lateinit var spinner : Spinner
+    private lateinit var tvRegistrationDate : TextView
+    private lateinit var tvDOB : TextView
+    private var formatter: Formatter = Formatter()
+
+    private var dateRegistration : Date? = null
+    private var dateOfBirth : Date? = null
+
+    private var selectedGender: String? = null
+    var customDialogToast = CustomDialogToast()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -26,12 +56,92 @@ class FragmentPatientRegistration : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_patient_reg, container, false)
 
+        spinner = rootView.findViewById(R.id.spinner)
+        tvDOB = rootView.findViewById(R.id.tvDOB)
+        tvRegistrationDate = rootView.findViewById(R.id.tvRegistrationDate)
 
+        tvDOB.setOnClickListener { showDatePicker("dob") }
+        tvRegistrationDate.setOnClickListener { showDatePicker("regDate") }
+
+        spinner.onItemSelectedListener = this
+
+        val categories: MutableList<String> = ArrayList()
+        categories.add("MALE")
+        categories.add("FEMALE")
+
+        // Creating adapter for spinner
+        val dataAdapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, categories)
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        // attaching data adapter to spinner
+        spinner.adapter = dataAdapter
+
+        rootView.btnSave.setOnClickListener {
+
+            val etPatientNumber = etPatientNumber.text.toString()
+            val etFirstName = etFirstName.text.toString()
+            val etLastName = etLastName.text.toString()
+
+            if (!TextUtils.isEmpty(etPatientNumber)
+                && !TextUtils.isEmpty(etFirstName)
+                && !TextUtils.isEmpty(etLastName)
+                && dateOfBirth != null
+                && dateRegistration != null
+                && selectedGender != null
+            ){
+
+
+
+            }else{
+                customDialogToast.CustomDialogToast(
+                    requireActivity(),
+                    "Please fill all the fields."
+                )
+            }
+
+        }
 
         return rootView
     }
 
+    private fun showDatePicker(value:String){
+        // Get Current Date
+        val c = Calendar.getInstance()
+        mYear = c[Calendar.YEAR]
+        mMonth = c[Calendar.MONTH]
+        mDay = c[Calendar.DAY_OF_MONTH]
 
 
+        val datePickerDialog = DatePickerDialog(requireActivity(),
+            { _, year, monthOfYear, dayOfMonth ->
+
+                val selectedDate = dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
+                val date = formatter.changeDateFormat(selectedDate)
+
+                if (value == "dob"){
+                    tvDOB.text = selectedDate
+                    dateOfBirth = date
+                }
+                if(value == "regDate"){
+                    tvRegistrationDate.text = selectedDate
+                    dateRegistration = date
+                }
+            },
+            mYear,
+            mMonth,
+            mDay
+        )
+        datePickerDialog.show()
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        val item = p0?.getItemAtPosition(p2).toString()
+        selectedGender = item
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+    }
 
 }

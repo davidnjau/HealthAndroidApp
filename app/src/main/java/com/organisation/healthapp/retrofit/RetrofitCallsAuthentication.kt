@@ -205,10 +205,11 @@ class RetrofitCallsAuthentication {
 
                         } else {
 
+                            Log.e("-*-*-*- ", response.toString())
                             val code = response.code()
                             messageToast = if (code != 500){
                                 val objectError = JSONObject(response.errorBody()!!.string())
-                                val error = objectError.getString("error")
+                                val error = objectError.getString("details")
                                 error
                             }else{
                                 "There is something wrong. Please try again"
