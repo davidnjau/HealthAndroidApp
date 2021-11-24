@@ -11,7 +11,11 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.organisation.healthapp.auth.Profile
+import com.organisation.healthapp.fragment.FragmentHome
+import com.organisation.healthapp.fragment.FragmentPatientListing
 import com.organisation.healthapp.fragment.FragmentPatientRegistration
+import com.organisation.healthapp.fragment.FragmentPatientVitals
+import com.organisation.healthapp.patient.PatientsListing
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -79,7 +83,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         super.onStart()
 
         replaceFragmenty(
-            fragment = FragmentPatientRegistration(),
+            fragment = FragmentHome(),
             allowStateLoss = true,
             containerViewId = R.id.mainContent
         )
@@ -92,6 +96,19 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
             R.id.navigation_home -> {
 
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+
+            }
+            R.id.navigation_profile -> {
+
+                val intent = Intent(this, Profile::class.java)
+                startActivity(intent)
+
+            }
+            R.id.navigation_registration -> {
+
                 replaceFragmenty(
                     fragment = FragmentPatientRegistration(),
                     allowStateLoss = true,
@@ -99,25 +116,21 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 )
 
             }
-//            R.id.navigation_orders -> {
-//
-//                replaceFragmenty(
-//                    fragment = FragmentOrders(),
-//                    allowStateLoss = true,
-//                    containerViewId = R.id.mainContent
-//                )
-//
-//            }
-//
-//            R.id.navigation_settings -> {
-//
-//                replaceFragmenty(
-//                    fragment = FragmentSettings(),
-//                    allowStateLoss = true,
-//                    containerViewId = R.id.mainContent
-//                )
-//
-//            }
+            R.id.navigation_vitals -> {
+
+                replaceFragmenty(
+                    fragment = FragmentPatientVitals(),
+                    allowStateLoss = true,
+                    containerViewId = R.id.mainContent
+                )
+
+            }
+            R.id.navigation_listing -> {
+
+                val intent = Intent(this, PatientsListing::class.java)
+                startActivity(intent)
+
+            }
 
 
 

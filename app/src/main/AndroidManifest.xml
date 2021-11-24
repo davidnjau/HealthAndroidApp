@@ -10,20 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthApp">
         <activity
+            android:parentActivityName=".MainActivity"
             android:name=".auth.Profile"
             android:exported="true" />
         <activity
+            android:parentActivityName=".MainActivity"
             android:name=".patient.PatientsListing"
             android:exported="true" />
-        <activity
-            android:name=".patient.PatientsForm"
-            android:exported="true" />
-        <activity
-            android:name=".patient.PatientsVitals"
-            android:exported="true" />
-        <activity
-            android:name=".patient.PatientRegistration"
-            android:exported="true" />
+
         <activity
             android:name=".auth.Register"
             android:exported="true" />

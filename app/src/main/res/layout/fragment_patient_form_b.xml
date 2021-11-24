@@ -46,12 +46,12 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="Registration Date"
+                    android:text="Visit Date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <EditText
-                    android:hint="Registration Date"
+                    android:hint="Visit Date"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
                     android:layout_width="match_parent"
@@ -67,16 +67,29 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="First Name"
+                    android:text="Visit Date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <EditText
-                    android:hint="First Name"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_outline"
+                <RadioGroup
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:text="Good"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:text="Poor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </RadioGroup>
+
 
             </LinearLayout>
 
@@ -88,16 +101,29 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="Last Name"
+                    android:text="Are you currently using any drugs?"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <EditText
-                    android:hint="Last Name"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_outline"
+                <RadioGroup
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:text="Yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:layout_weight="1"
+                        android:text="No"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </RadioGroup>
+
 
             </LinearLayout>
 
@@ -109,12 +135,13 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="Date of Birth"
+                    android:text="Comments"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <EditText
-                    android:hint="12/12/12"
+                    android:paddingBottom="60dp"
+                    android:hint="Comments"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
                     android:layout_width="match_parent"
@@ -122,36 +149,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:textColor="@color/black"
-                    android:text="Gender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <RelativeLayout
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Spinner
-                        android:id="@+id/coursesspinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </RelativeLayout>
-
-
-
-            </LinearLayout>
 
 
         </LinearLayout>

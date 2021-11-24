@@ -46,12 +46,12 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="Registration Date"
+                    android:text="Visit Date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <EditText
-                    android:hint="Registration Date"
+                    android:hint="Visit Date"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
                     android:layout_width="match_parent"
@@ -67,12 +67,12 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="First Name"
+                    android:text="Weight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <EditText
-                    android:hint="First Name"
+                    android:hint="Weight in Kgs"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
                     android:layout_width="match_parent"
@@ -88,12 +88,12 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="Last Name"
+                    android:text="Height"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <EditText
-                    android:hint="Last Name"
+                    android:hint="Height in CM"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
                     android:layout_width="match_parent"
@@ -109,49 +109,22 @@
 
                 <TextView
                     android:textColor="@color/black"
-                    android:text="Date of Birth"
+                    android:text="BMI"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
-                <EditText
-                    android:hint="12/12/12"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_outline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <TextView
-                    android:textColor="@color/black"
-                    android:text="Gender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <RelativeLayout
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_outline"
+                    android:textColor="@color/black"
+                    android:text="12"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Spinner
-                        android:id="@+id/coursesspinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </RelativeLayout>
+                    android:layout_height="wrap_content"/>
 
 
 
             </LinearLayout>
+
 
 
         </LinearLayout>
